@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: 编译N1-OpenWRT-Docker
+name: 编译N1-OPDocker
 
 on:
   repository_dispatch:
@@ -69,7 +69,6 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-#        git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
@@ -99,7 +98,6 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-#        [ -e n1/diy.sh ] && mv n1/diy.sh openwrt/diy.sh
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
@@ -157,7 +155,6 @@ jobs:
     - name: Image - build docker image and upload to docker hub
       run: |
         cd /mnt/n1
-#        sudo rm -rf openwrt-armvirt-64-*
         sudo bash build.sh
         gzip -dc /mnt/n1/opt/imgs/*.gz | docker load
         docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }}
