@@ -133,6 +133,13 @@ jobs:
       if: (!cancelled())
       run: df -hT
 
+    - name: Openwrt version
+      run: |
+        cd openwrt
+        OpVersion1=$(echo "$(cat package/lean/default-settings/files/zzz-default-settings)" | grep -Po "DISTRIB_REVISION=\'\K[^\']*")
+        echo $OpVersion1
+        echo "TAG=$OpVersion1" >> $GITHUB_ENV
+
     - name: CheckEnv for docker
       working-directory: /workdir
       run: |
@@ -163,18 +170,18 @@ jobs:
         docker push itvro/openwrt-aarch64:${{ env.TAG }}
         echo "::set-output name=status::success"
        
-    - name: Upload - push to artifact file
-      uses: actions/upload-artifact@v1
-      with:
-        name: N1_OpenWRT_Docker
-        path: /mnt/n1/opt/imgs
+#    - name: Upload - push to artifact file
+#      uses: actions/upload-artifact@v1
+#      with:
+#        name: N1_OpenWRT_Docker
+#        path: /mnt/n1/opt/imgs
 
-    - name: Upload bin directory
-      uses: actions/upload-artifact@main
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
-      with:
-        name: N1_OpenWRT_Docker_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: /mnt/n1/opt/imgs
+#    - name: Upload bin directory
+#      uses: actions/upload-artifact@main
+#      if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
+#      with:
+#        name: N1_OpenWRT_Docker_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+#        path: /mnt/n1/opt/imgs
 
     - name: Organize files
       id: organize
