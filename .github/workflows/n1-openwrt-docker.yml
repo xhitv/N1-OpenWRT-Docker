@@ -31,7 +31,7 @@ env:
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: false
-  REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+  GitHub_TOKEN: ${{ secrets.GitHub_TOKEN }}
 #  TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 #  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
   TZ: Asia/Shanghai
@@ -231,7 +231,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
-        REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+        GitHub_TOKEN: ${{ secrets.GitHub_TOKEN }}
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
@@ -250,7 +250,7 @@ jobs:
         keep_latest: 3
         delete_tags: true
       env:
-        REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+        GitHub_TOKEN: ${{ secrets.GitHub_TOKEN }}
 
 #    - name: Information notification
 #      run: |
