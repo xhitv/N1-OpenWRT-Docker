@@ -30,7 +30,7 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
-  UPLOAD_RELEASE: true
+  UPLOAD_RELEASE: false
   GitHub_TOKEN: ${{ secrets.GitHub_TOKEN }}
 #  TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 #  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
