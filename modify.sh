@@ -49,7 +49,10 @@ git clone https://github.com/jerrykuku/luci-app-vssr package/community/luci-app-
 #
 # > Install to emmc script for phicomm n1
 #git clone https://github.com/tuanqing/install-program package/install-program
-
+#
+# > iKoolProxy
+git clone https://github.com/iwrt/luci-app-ikoolproxy.git package/luci-app-ikoolproxy
+#
 # 个性化配置修改
 #
 # > Mod
