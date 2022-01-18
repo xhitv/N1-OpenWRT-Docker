@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: 编译N1-OpenWRT For Docker
+name: 编译N1-OpenWRT For Docker with kp
 
 on:
   repository_dispatch:
