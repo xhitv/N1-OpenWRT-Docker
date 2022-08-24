@@ -19,7 +19,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 # 集成自定义插件
 #
 # > AdguardHome
-#git clone https://github.com/rufengsuixing/luci-app-adguardhome package/community/luci-app-adguardhome
+git clone https://github.com/rufengsuixing/luci-app-adguardhome package/community/luci-app-adguardhome
 #
 # > lean ssr plus
 #git clone https://github.com/fw876/helloworld.git package/lean/luci-app-ssr-plus
@@ -35,7 +35,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 #git clone https://github.com/lisaac/luci-app-dockerman package/community/luci-app-dockerman
 #
 # > DnsFilter
-git clone https://github.com/garypang13/luci-app-dnsfilter package/community/luci-app-dnsfilter
+# git clone https://github.com/garypang13/luci-app-dnsfilter package/community/luci-app-dnsfilter
 #
 # > GoWebDav
 #git clone https://github.com/immortalwrt/openwrt-gowebdav package/community/openwrt-gowebdav
@@ -51,7 +51,7 @@ git clone https://github.com/jerrykuku/luci-app-vssr package/community/luci-app-
 #git clone https://github.com/tuanqing/install-program package/install-program
 #
 # > iKoolProxy
-git clone https://github.com/iwrt/luci-app-ikoolproxy.git package/luci-app-ikoolproxy
+git clone https://github.com/yaof2/luci-app-ikoolproxy.git package/luci-app-ikoolproxy
 #
 # 个性化配置修改
 #
@@ -80,10 +80,10 @@ sed -i 's/\"services\"/\"network\"/g' feeds/luci/applications/luci-app-upnp/luas
 #
 # > 修改插件名字
 #sed -i 's/\"Rclone\"/\"RcloneSYNC\"/g' feeds/luci/modules/luci-base/po/zh-cn/base.po
-sed -i 's/\"CPU 使用率（%）\"/\"CPU负载\"/g' feeds/luci/modules/luci-base/po/zh-cn/base.po
-sed -i 's/\"Argon 主题设置\"/\"主题设置\"/g' package/community/luci-app-argon-config/po/zh-cn/argon-config.po
-sed -i 's/\"TTYD 终端\"/\"网页终端\"/g' package/lean/luci-app-ttyd/po/zh-cn/terminal.po
-sed -i 's/\"解锁网易云灰色歌曲\"/\"NeteaseMusic\"/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
+#sed -i 's/\"CPU 使用率（%）\"/\"CPU负载\"/g' feeds/luci/modules/luci-base/po/zh-cn/base.po
+#sed -i 's/\"Argon 主题设置\"/\"主题设置\"/g' package/community/luci-app-argon-config/po/zh-cn/argon-config.po
+#sed -i 's/\"TTYD 终端\"/\"网页终端\"/g' package/lean/luci-app-ttyd/po/zh-cn/terminal.po
+#sed -i 's/\"解锁网易云灰色歌曲\"/\"NeteaseMusic\"/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
 #sed -i 's/\"KMS 服务器\"/\"KMS Activator\"/g' package/lean/luci-app-vlmcsd/po/zh-cn/vlmcsd.zh-cn.po
 #sed -i 's/\"Turbo ACC 网络加速\"/\"网络加速\"/g' package/lean/luci-app-flowoffload/po/zh-cn/flowoffload.po
 #
