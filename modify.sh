@@ -52,7 +52,7 @@ git clone https://github.com/jerrykuku/luci-app-vssr package/community/luci-app-
 #git clone https://github.com/tuanqing/install-program package/install-program
 #
 # > iKoolProxy
-git clone https://github.com/yaof2/luci-app-ikoolproxy.git package/luci-app-ikoolproxy
+git clone https://github.com/xhitv/luci-app-ikoolproxy.git package/luci-app-ikoolproxy
 #
 # 个性化配置修改
 #
