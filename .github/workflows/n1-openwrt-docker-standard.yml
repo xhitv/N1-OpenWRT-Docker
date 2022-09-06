@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: N1-OpenWRT With KP Test
+name: N1-OpenWRT For Docker (Standard)
 
 on:
   repository_dispatch:
@@ -22,7 +22,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: test.config
+  CONFIG_FILE: standard.config
   DIY_P1_SH: feeds.sh
   DIY_P2_SH: modify.sh
   SSH_ACTIONS: false
