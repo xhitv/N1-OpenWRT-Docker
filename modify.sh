@@ -9,7 +9,7 @@ sed -i '/uci commit system/i\uci set system.@system[0].hostname='N1-OpenWRT'' pa
 #
 # > 清除旧版argon主题并拉取最新版
 rm -rf package/lean/luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/community/luci-theme-argon
+# git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/community/luci-theme-argon
 git clone -b master https://github.com/jerrykuku/luci-theme-argon package/community/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config package/community/luci-app-argon-config
 #
