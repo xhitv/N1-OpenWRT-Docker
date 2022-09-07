@@ -152,12 +152,12 @@ jobs:
     - name: Image - build docker image and upload to docker hub
       run: |
         cd /mnt/n1
-        sudo bash build.sh
+        sudo bash build-standard.sh
         gzip -dc /mnt/n1/opt/imgs/*.gz | docker load
         docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }}
-        docker tag itvro/openwrt-aarch64 itvro/openwrt-aarch64:${{ env.TAG }}
-        docker push itvro/openwrt-aarch64
-        docker push itvro/openwrt-aarch64:${{ env.TAG }}
+        docker tag itvro/openwrt-aarch64-standard itvro/openwrt-aarch64-standard:${{ env.TAG }}
+        docker push itvro/openwrt-aarch64-standard
+        docker push itvro/openwrt-aarch64-standard:${{ env.TAG }}
         echo "::set-output name=status::success"
        
 #    - name: Upload - push to artifact file
