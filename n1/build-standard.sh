@@ -7,7 +7,7 @@ fi
 
 TMPDIR=openwrt_rootfs
 OUTDIR=opt/imgs
-IMG_NAME=itvro/openwrt-aarch64
+IMG_NAME=itvro/openwrt-aarch64-standard
 
 [ -d "$TMPDIR" ] && rm -rf "$TMPDIR"
 mkdir -p "$OUTDIR"
@@ -25,4 +25,4 @@ rm -f DockerImg-OpenwrtArm64-${TAG}.gz && \
 docker build -t ${IMG_NAME}:${TAG} . && \
 rm -f  openwrt-armvirt-64-default-rootfs-patched.tar && \
 rm -rf "$TMPDIR" && \
-docker save ${IMG_NAME}:${TAG} | pigz -9 > $OUTDIR/docker-img-openwrt-aarch64-${TAG}.gz
+docker save ${IMG_NAME}:${TAG} | pigz -9 > $OUTDIR/docker-img-openwrt-aarch64-standard-${TAG}.gz
