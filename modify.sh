@@ -8,12 +8,12 @@ sed -i '/uci commit system/i\uci set system.@system[0].hostname='N1-OpenWRT'' pa
 # 配置自定义主题
 #
 # > 清除旧版argon主题并拉取最新版
-rm -rf package/lean/luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/community/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-app-argon-config package/community/luci-app-argon-config
+# rm -rf package/lean/luci-theme-argon
+# git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/community/luci-theme-argon
+# git clone https://github.com/jerrykuku/luci-app-argon-config package/community/luci-app-argon-config
 #
 # > 修改默认主题为 Argon
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+# sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 #
 
 # 集成自定义插件
