@@ -44,14 +44,15 @@ sed -i '/uci commit system/i\uci set system.@system[0].hostname='N1-OpenWRT'' pa
 git clone https://github.com/jerrykuku/lua-maxminddb package/community/lua-maxminddb
 git clone https://github.com/jerrykuku/luci-app-vssr package/community/luci-app-vssr
 #
+# > iKoolProxy
+git clone https://github.com/xhitv/luci-app-ikoolproxy.git package/community/luci-app-ikoolproxy
+#
 # > OpenClash
 # svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/community/luci-app-openclash
 #
 # > Install to emmc script for phicomm n1
 # git clone https://github.com/tuanqing/install-program package/install-program
 #
-# > iKoolProxy
-git clone https://github.com/xhitv/luci-app-ikoolproxy.git package/luci-app-ikoolproxy
 #
 # 个性化配置修改
 #
