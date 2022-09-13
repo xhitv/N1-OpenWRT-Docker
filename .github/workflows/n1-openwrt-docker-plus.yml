@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: N1-OpenWRT For Docker (Plus)
+name: N1-OpenWRT For Docker (Standard)
 
 on:
   repository_dispatch:
@@ -22,7 +22,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: .config
+  CONFIG_FILE: n1-plus.config
   DIY_P1_SH: feeds.sh
   DIY_P2_SH: modify.sh
   SSH_ACTIONS: false
@@ -32,8 +32,6 @@ env:
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: false
   GitHub_TOKEN: ${{ secrets.GitHub_TOKEN }}
-#  TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-#  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
   TZ: Asia/Shanghai
 
 jobs:
@@ -43,14 +41,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@main
-
-#    - name: Information notification
-#      run: |
-#        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=  亲爱的✨主人✨
-#        
-#        您的 [OpenWrt-Phicomm-N1] 固件正努力编译
-#        
-#        请耐心等待...... 😋" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
     - name: Initialization environment
       env:
@@ -162,12 +152,12 @@ jobs:
     - name: Image - build docker image and upload to docker hub
       run: |
         cd /mnt/n1
-        sudo bash build.sh
+        sudo bash build-plus.sh
         gzip -dc /mnt/n1/opt/imgs/*.gz | docker load
         docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }}
-        docker tag itvro/openwrt-aarch64 itvro/openwrt-aarch64-plus:${{ env.TAG }}
-        docker push itvro/openwrt-aarch64
-        docker push itvro/openwrt-aarch64:${{ env.TAG }}
+        docker tag itvro/openwrt-aarch64-plus itvro/openwrt-aarch64-plus:${{ env.TAG }}
+        docker push itvro/openwrt-aarch64-plus
+        docker push itvro/openwrt-aarch64-plus:${{ env.TAG }}
         echo "::set-output name=status::success"
        
 #    - name: Upload - push to artifact file
@@ -252,9 +242,3 @@ jobs:
       env:
         GitHub_TOKEN: ${{ secrets.GitHub_TOKEN }}
 
-#    - name: Information notification
-#      run: |
-#        curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=  亲爱的✨主人✨
-#        您的 [OpenWrt-Phicomm-N1] 固件已完成编译
-#      
-#        请前往查看！！" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" 
