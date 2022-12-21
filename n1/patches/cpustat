@@ -26,7 +26,7 @@ sub get_cpu_freq {
            '/sys/devices/system/cpu/cpufreq/policy0/cpuinfo_cur_freq',
        );
     my $fh;
-    my $freq = "Unknown";
+    my $freq = "Amlogic S905D";
     for my $fname (@fnames) {
         if( -f $fname ) {
             open $fh, "<", $fname;
