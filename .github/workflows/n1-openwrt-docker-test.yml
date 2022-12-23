@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: N1-OpenWRT For Docker (Standard)
+name: N1-OpenWRT For Docker (Test)
 
 on:
   repository_dispatch:
