@@ -19,7 +19,7 @@ sed -i '/uci commit system/i\uci set system.@system[0].hostname='N1-OpenWRT'' pa
 # 集成自定义插件
 #
 # > AdguardHome
-# git clone https://github.com/rufengsuixing/luci-app-adguardhome package/community/luci-app-adguardhome
+git clone https://github.com/rufengsuixing/luci-app-adguardhome package/community/luci-app-adguardhome
 #
 # > lean ssr plus
 # git clone https://github.com/fw876/helloworld.git package/lean/luci-app-ssr-plus
@@ -41,8 +41,8 @@ sed -i '/uci commit system/i\uci set system.@system[0].hostname='N1-OpenWRT'' pa
 # git clone https://github.com/immortalwrt/openwrt-gowebdav package/community/openwrt-gowebdav
 #
 # > HelloWorld (vssr)
-git clone https://github.com/jerrykuku/lua-maxminddb package/community/lua-maxminddb
-git clone https://github.com/jerrykuku/luci-app-vssr package/community/luci-app-vssr
+# git clone https://github.com/jerrykuku/lua-maxminddb package/community/lua-maxminddb
+# git clone https://github.com/jerrykuku/luci-app-vssr package/community/luci-app-vssr
 #
 # > iKoolProxy
 git clone https://github.com/xhitv/luci-app-ikoolproxy.git package/community/luci-app-ikoolproxy
