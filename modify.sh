@@ -19,7 +19,7 @@ sed -i '/uci commit system/i\uci set system.@system[0].hostname='N1-OpenWRT'' pa
 # 集成自定义插件
 #
 # > AdguardHome
-git clone https://github.com/rufengsuixing/luci-app-adguardhome package/community/luci-app-adguardhome
+# git clone https://github.com/rufengsuixing/luci-app-adguardhome package/community/luci-app-adguardhome
 #
 # > iKoolProxy
 git clone https://github.com/xhitv/luci-app-ikoolproxy.git package/community/luci-app-ikoolproxy
